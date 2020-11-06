@@ -43,3 +43,5 @@ audiences logged in the output.
 4.  Select the type of destination in column C.
 5.  Press the "Create Audiences" button.
 
+
+__This is not an officially supported Google product.__
