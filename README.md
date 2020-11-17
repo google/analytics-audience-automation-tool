@@ -1,4 +1,4 @@
-# Google Analytics Audience Automation Tool
+# Analytics Audience Automation Tool
 
 In Google Analytics 360 when creating an audience you can only link this to
 [10 destinations](https://support.google.com/analytics/answer/2611404?hl=en).
@@ -23,6 +23,7 @@ This is an app script solution designed to solve this challenge.
 
 _(Optionally)_ the `deleteAudiencesInLog()` method can be used to delete all
 audiences logged in the output.
+
 ## Initial Set Up
 
 1.  Create a copy of the
@@ -42,6 +43,13 @@ audiences logged in the output.
 3.  List the destination IDs in column B.
 4.  Select the type of destination in column C.
 5.  Press the "Create Audiences" button.
+
+## Limitations
+
+The following are known limitations of the current implementation:
+
+- You cannot copy an audience from one property and link it to destinations on
+  another property.
 
 
 __This is not an officially supported Google product.__

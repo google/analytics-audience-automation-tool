@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
  * Run all tests in the project.
  */
@@ -25,6 +26,7 @@ function runAllTests() {
   test_chunkArray();
   Logger.log('Done');
 }
+
 /**
  * Build a test URL with a particular key.
  * @param {string} key: the key to use in the URL.
@@ -33,6 +35,7 @@ function runAllTests() {
 function buildUrlWithKey(key) {
   return buildUrl(key, '111111111', '222222222');
 }
+
 /**
  * Build a test URL with a particular account ID.
  * @param {string} accountId: the account ID to use in the URL.
@@ -41,6 +44,7 @@ function buildUrlWithKey(key) {
 function buildUrlWithAccountId(accountId) {
   return buildUrl('12345', accountId, '222222222');
 }
+
 /**
  * Build a test URL with a particular internal web property ID.
  * @param {string} webPropertyId: the web property ID to use in the URL.
@@ -49,6 +53,7 @@ function buildUrlWithAccountId(accountId) {
 function buildUrlWithInternalWebPropertyId(webPropertyId) {
   return buildUrl('12345', '111111111', webPropertyId);
 }
+
 /**
  * Build a test URL with a particular key & account ID.
  * @param {string} key: the key to use in the URL.
@@ -64,6 +69,7 @@ function buildUrl(key, accountId, webPropertyId) {
             `&m-content-audienceListsTabContainer.sortColumnId=name` +
             `&m-content-audienceListsTabContainer.sortDescending=false`;
 }
+
 /**
  * Checks the arguments are equal and if not, logs an error message.
  * @param {*} actual: the actual value.
@@ -79,6 +85,7 @@ Msg: ${errorMsg}`;
     Logger.log(logOutput);
   }
 }
+
 /**
  * Test the extractAudienceIdFromUrl() method.
  */
@@ -93,25 +100,28 @@ function test_extractAudienceIdFromUrl() {
   audienceId = extractAudienceIdFromUrl(badUrl);
   assertEqual(audienceId, null, 'Function not handling missing query param.');
 }
+
 /**
  * Test the extractAccountIdFromUrl() method.
  */
 function test_extractAccountIdFromUrl() {
-  const realAccountId = '67931098';
+  const realAccountId = '111222333';
   const url = buildUrlWithAccountId(realAccountId);
   const accountId = extractAccountIdFromUrl(url);
   assertEqual(accountId, realAccountId, 'Account ID is not correct.');
 }
+
 /**
  * Test the extractInternalWebPropertyIdFromUrl() method.
  */
 function test_extractInternalWebPropertyIdFromUrl() {
-  const realWebPropertyId = '578930987';
+  const realWebPropertyId = '444555666';
   const url = buildUrlWithInternalWebPropertyId(realWebPropertyId);
   const webPropertyId = extractInternalWebPropertyIdFromUrl(url);
   assertEqual(
     webPropertyId, realWebPropertyId, 'Web Property ID is not correct.');
 }
+
 /**
  * Test the buildAudienceUrl() method.
  */
@@ -125,6 +135,7 @@ function test_buildAudienceUrl() {
   assertEqual(url.indexOf(oldKey), -1, 'Old key is present.');
   assertEqual(url.indexOf(newKey) >= 0, true, 'New key is not present.');
 }
+
 /**
  * Test the chunkArray() method.
  */
