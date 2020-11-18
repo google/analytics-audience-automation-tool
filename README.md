@@ -8,18 +8,18 @@ destinations.
 
 This is an app script solution designed to solve this challenge.
 
-## Steps
+## How it works
 
-1.  User creates an audience in the UI.
-2.  User copies the URL to a trix.
-3.  User list the destination IDs to copy the audience to.
-4.  User runs `runAudienceCreator()`, which:
+1.  A user creates an audience in the Google Analytics UI.
+2.  The user copies the URL to a Google Sheet.
+3.  The user list the destination IDs to copy the audience to.
+4.  The user runs `runAudienceCreator()`, which:
     1.  Extracts the audience ID from the URL.
     2.  Fetches that audience from the API.
-    3.  Fetches the destinations from the trix.
+    3.  Fetches the destinations from the Google Sheet.
     4.  Creates a copy of the original audience for each batch of 10
         destinations.
-    5.  Stores outputs in trix.
+    5.  Logs the outputs in the Google Sheet.
 
 _(Optionally)_ the `deleteAudiencesInLog()` method can be used to delete all
 audiences logged in the output.
@@ -27,9 +27,9 @@ audiences logged in the output.
 ## Initial Set Up
 
 1.  Create a copy of the
-    [template trix](https://docs.google.com/spreadsheets/d/1d-THaFWEmPxtipQFUu9Xiyf9yFosw0RXpc6PS8nqB7o/edit#gid=0).
+    [template Google Sheet](https://docs.google.com/spreadsheets/d/1HHEllWKo9b8I5hoDadCFNU9jKk09Q6pnHG35KZflvj4/edit?usp=sharing).
 2.  Go to Tools -> Script Editor to open the App Script Editor.
-3.  Create a new script file and copy the content of app_script.js to this.
+3.  Create a new script file and copy the content of `app_script.js` to this.
 4.  Go to Resources -> Cloud Platform Project and add your Google Cloud Project.
 5.  In your Google Cloud Project enable the
     [Google Analytics API](https://console.cloud.google.com/apis/api/analytics.googleapis.com).
